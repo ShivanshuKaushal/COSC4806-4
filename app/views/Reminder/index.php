@@ -3,7 +3,7 @@
     <div class="page-header" id="banner">
         <div class="row">
             <div class="col-lg-12">
-                <h1>You are at a secret page</h1>
+                <h1>Reminder</h1>
                 <p class="lead"> <?= date("F jS, Y"); ?></p>
             </div>
         </div>
