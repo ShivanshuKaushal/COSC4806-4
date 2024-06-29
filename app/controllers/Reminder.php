@@ -38,7 +38,11 @@ class Reminder extends Controller {
        $statement->bindParam(':id', $id, PDO::PARAM_INT);
        $statement->execute();
    }
-   
+     public function delete($id) {
+         $reminder = $this->model('Reminder');
+         $reminder->delete_reminder($id);
+         header('Location: /reminders');
+     }
    }
 ?>
      
