@@ -30,8 +30,17 @@ class Reminder extends Controller {
            $reminder_data = $reminder->get_reminder($id);
            $this->view('reminders/update', ['reminder' => $reminder_data]);
        }
-   }
+    
 
+   public function delete_reminder($id) {
+       $db = db_connect();
+       $statement = $db->prepare("DELETE FROM reminders WHERE id = :id");
+       $statement->bindParam(':id', $id, PDO::PARAM_INT);
+       $statement->execute();
+   }
+   
+   }
+?>
      
   
 

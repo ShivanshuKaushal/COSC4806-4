@@ -20,5 +20,12 @@ class Reminder {
         $statement->bindParam(':subject', $subject, PDO::PARAM_STR);
         $statement->execute();
     }
+   public function update_reminder($id, $subject) {
+      $db = db_connect();
+      $statement = $db->prepare("UPDATE reminders SET subject = :subject WHERE id = :id");
+      $statement->bindParam(':id', $id, PDO::PARAM_INT);
+      $statement->bindParam(':subject', $subject, PDO::PARAM_STR);
+      $statement->execute();
+  }
   }  
   ?>
